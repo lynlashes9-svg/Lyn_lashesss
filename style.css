@@ -186,7 +186,7 @@ nav ul li a:hover {
 .btn:hover {
   transform: translateY(-3px);
   box-shadow: 0 12px 35px rgba(0,0,0,0.3);
-  background: linear-gradient(45deg, #f8f9fa, #fff);
+  /* background: linear-gradient(45deg, #f8f9fa, #fff); */
 }
 
 /* Sections */
