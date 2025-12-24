@@ -463,6 +463,30 @@
           </form>
         </div>
 
+        <script>
+          document.getElementById('contact-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const formData = new FormData(this);
+            const data = {
+              nombre: formData.get('nombre'),
+              telefono: formData.get('telefono'),
+              servicio: formData.get('servicio'),
+              fecha: formData.get('fecha'),
+              mensaje: formData.get('mensaje')
+            };
+
+            emailjs.send('service_lzcxbem', 'template_qsch31l', data)
+              .then(function(response) {
+                alert('Mensaje enviado exitosamente!');
+                document.getElementById('contact-form').reset();
+              }, function(error) {
+                alert('Error al enviar el mensaje. Por favor, intenta de nuevo.');
+                console.error('EmailJS error:', error);
+              });
+          });
+        </script>
+
         <div class="card info">
           <div class="line"><strong>📍</strong> Dirección del estudio Barranquitas, Barrio Quebradillas.</div>
           <div class="line"><strong>📞</strong> (939)638-6987</div>
@@ -1226,28 +1250,5 @@ footer .foot{
 }
 
 </style>
-
-<script>
-  // IMPORTANTE: init ANTES de enviar
-  emailjs.init({ publicKey: "wGo8YvMM5kiYxur2G" });
-
-  document.getElementById("contact-form").addEventListener("submit", function (e) {
-    e.preventDefault();
-
-    emailjs
-      .sendForm("service_zeikn5w", "template_qsch31l", this, { publicKey: "wGo8YvMM5kiYxur2G" })
-      .then(() => {
-        alert("Solicitud enviada correctamente.");
-        this.reset();
-      })
-      .catch((err) => {
-        console.error("EmailJS error:", err);
-        alert("No se pudo enviar. Abre F12 > Console y copia el error.");
-      });
-  });
-</script>
-
-
-
 </body>
 </html>
