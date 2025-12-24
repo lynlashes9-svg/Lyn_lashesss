@@ -65,7 +65,7 @@
         </div>
 
         <div class="hero-media" aria-label="Imagen del estudio">
-          <img src="galeria/image10.jpeg" alt="Estudio de pestañas" />
+          <img src="galeria/image20.jpeg" alt="Estudio de pestañas" />
         </div>
       </div>
     </div>
@@ -466,8 +466,15 @@
         <div class="card info">
           <div class="line"><strong>📍</strong> Dirección del estudio Barranquitas, Barrio Quebradillas.</div>
           <div class="line"><strong>📞</strong> (939)638-6987</div>
-          <div class="line"><strong>📧</strong> lashstudio@email.com</div>
-          <div class="line"><strong>📲</strong> Instagram / Facebook (pon tus enlaces)</div>
+          <div class="line"><strong>📧</strong> lynlashes9@gmail.com</div>
+          <div class="social-buttons">
+            <a href="https://www.instagram.com/lyn_lashesss?igsh=MWZlNHppZGcyMWw1cA%3D%3D&utm_source=qr" target="_blank" class="btn-social instagram">
+              <strong>📷</strong> Instagram
+            </a>
+            <a href="https://www.facebook.com/profile.php?id=61578373570641" target="_blank" class="btn-social facebook">
+              <strong>📘</strong> Facebook
+            </a>
+          </div>
         </div>
       </div>
     </div>
@@ -1045,6 +1052,41 @@ textarea{
   min-width: 20px;
 }
 
+/* Social buttons */
+.social-buttons{
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.btn-social{
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+  box-shadow: var(--shadow-soft);
+}
+
+.btn-social.instagram,
+.btn-social.facebook{
+  background: var(--accent);
+  color: #fff;
+  border: 2px solid var(--accent);
+}
+
+.btn-social.instagram:hover,
+.btn-social.facebook:hover{
+  background: var(--accent-2);
+  border-color: var(--accent-2);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+}
+
 /* Footer */
 footer{
   padding: 2rem 0;
@@ -1107,27 +1149,43 @@ footer .foot{
 </style>
 
 <script>
+  // Asegúrate de tener cargado EmailJS y tu init ANTES de esto
   document.getElementById('contact-form').addEventListener('submit', function(event) {
     event.preventDefault();
+
+    const submitButton = this.querySelector('button[type="submit"]');
+    const originalText = submitButton.textContent;
+    submitButton.textContent = 'Enviando...';
+    submitButton.disabled = true;
 
     const formData = {
       nombre: this.nombre.value,
       telefono: this.telefono.value,
       servicio: this.servicio.value,
       fecha: this.fecha.value,
-      mensaje: this.mensaje.value
+      mensaje: this.mensaje.value,
+      to_email: 'lynlashes9@gmail.com'
     };
+
+    console.log('Intentando enviar email con datos:', formData);
 
     emailjs.send('service_zeikn5w', 'template_qsch31l', formData)
       .then(function(response) {
-        alert('Mensaje enviado exitosamente!');
+        console.log('Email enviado exitosamente:', response);
+        alert('Su solicitud ha sido enviada exitosamente y llegará al correo lynlashes9@gmail.com. Nos pondremos en contacto pronto.');
         document.getElementById('contact-form').reset();
-      }, function(error) {
+        submitButton.textContent = originalText;
+        submitButton.disabled = false;
+      })
+      .catch(function(error) {
+        console.error('Error al enviar email:', error);
         alert('Error al enviar el mensaje. Inténtalo de nuevo.');
-        console.error('EmailJS error:', error);
+        submitButton.textContent = originalText;
+        submitButton.disabled = false;
       });
   });
 </script>
+
 
 </body>
 </html>
