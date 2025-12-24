@@ -1131,60 +1131,122 @@ footer .foot{
 }
 
 /* Responsive */
+@media (max-width: 1024px){
+  .hero-grid{ grid-template-columns: 1fr; gap: 1.5rem; }
+  .about{ grid-template-columns: 1fr; gap: 1.5rem; }
+  .contact-wrap{ grid-template-columns: 1fr; gap: 1.5rem; }
+  .grid-3{ grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+  .section-title h2{ font-size: 2.2rem; }
+  .hero h1{ font-size: clamp(1.8rem, 4vw, 2.5rem); }
+  .hero-card{ padding: 2rem; }
+  .card{ padding: 1.5rem; }
+  .about .box{ padding: 1.5rem; }
+  .form, .info{ padding: 1.5rem; }
+}
+
 @media (max-width: 768px){
-  .hero-grid{ grid-template-columns: 1fr; }
-  .about{ grid-template-columns: 1fr; }
-  .contact-wrap{ grid-template-columns: 1fr; }
-  .grid-3{ grid-template-columns: 1fr; }
-  .form .row{ grid-template-columns: 1fr; }
+  .container{ padding: 0 0.5rem; }
+  .hero{ padding: 3rem 0 1.5rem; }
+  .hero-grid{ grid-template-columns: 1fr; gap: 1rem; }
+  .about{ grid-template-columns: 1fr; gap: 1rem; }
+  .contact-wrap{ grid-template-columns: 1fr; gap: 1rem; }
+  .grid-3{ grid-template-columns: 1fr; gap: 1rem; }
+  .form .row{ grid-template-columns: 1fr; margin-bottom: 0.5rem; }
   nav{ height: auto; padding: 1rem 0; }
-  .brand{ min-width: auto; }
-  nav ul{ justify-content: center; }
+  .brand{ min-width: auto; gap: 0.5rem; }
+  .brand img{ width: 35px; height: 35px; }
+  .brand .name strong{ font-size: 1.1rem; }
+  .brand .name span{ font-size: 0.75rem; }
+  nav ul{ justify-content: center; gap: 0.25rem; flex-wrap: wrap; }
+  nav a{ padding: 0.4rem 0.8rem; font-size: 0.85rem; }
   .hero{ padding-top: 2rem; }
-  .section-title h2{ font-size: 2rem; }
-  .hero h1{ font-size: 2rem; }
+  .section-title{ margin-bottom: 2rem; }
+  .section-title h2{ font-size: 1.8rem; }
+  .section-title p{ font-size: 1rem; }
+  .hero h1{ font-size: clamp(1.5rem, 5vw, 2rem); }
+  .hero p{ font-size: 1rem; margin-bottom: 1.5rem; }
+  .hero-actions{ gap: 0.75rem; }
+  .btn{ height: 44px; padding: 0 1.25rem; font-size: 0.95rem; }
+  .hero-card{ padding: 1.5rem; }
+  .card{ padding: 1.25rem; }
+  .card h3{ font-size: 1.1rem; }
+  .card p{ font-size: 0.9rem; margin-bottom: 0.75rem; }
+  .badge{ font-size: 0.75rem; padding: 0.2rem 0.6rem; }
+  .price{ font-size: 1rem; }
+  .about .box{ padding: 1.25rem; }
+  .about .box h3{ font-size: 1.3rem; }
+  .about .box p{ font-size: 0.9rem; margin-bottom: 0.75rem; }
+  .about .photo img{ min-height: 250px; }
+  #gallery{ padding: 2rem 1rem; }
+  #gallery h3{ font-size: 1.6rem; }
+  #gallery p{ font-size: 0.9rem; margin-bottom: 1.5rem; }
+  .slider-container{ max-width: 100%; }
+  .slide img{ height: 300px; }
+  .form, .info{ padding: 1.25rem; }
+  .form h3, .info h3{ font-size: 1.3rem; margin-bottom: 1rem; }
+  .input, textarea{ padding: 0.6rem 0.8rem; font-size: 0.95rem; }
+  .info .line{ padding: 0.5rem 0; font-size: 0.9rem; }
+  .social-buttons{ gap: 0.75rem; }
+  .btn-social{ padding: 0.6rem 0.8rem; font-size: 0.85rem; }
+  footer{ padding: 1.5rem 0; margin-top: 3rem; }
+  footer .foot{ font-size: 0.85rem; }
+  .whatsapp{ width: 55px; height: 55px; font-size: 1.3rem; }
   .slider-nav{ display: none; }
+}
+
+@media (max-width: 480px){
+  .container{ padding: 0 0.25rem; }
+  .hero{ padding: 2rem 0 1rem; }
+  .hero-card{ padding: 1.25rem; }
+  .hero h1{ font-size: clamp(1.3rem, 6vw, 1.8rem); }
+  .hero p{ font-size: 0.95rem; margin-bottom: 1.25rem; }
+  .btn{ height: 42px; padding: 0 1rem; font-size: 0.9rem; }
+  .section-title h2{ font-size: 1.6rem; }
+  .section-title p{ font-size: 0.95rem; }
+  .card{ padding: 1rem; }
+  .card h3{ font-size: 1rem; }
+  .card p{ font-size: 0.85rem; margin-bottom: 0.5rem; }
+  .price{ font-size: 0.95rem; }
+  .about .box{ padding: 1rem; }
+  .about .box h3{ font-size: 1.2rem; }
+  .about .box p{ font-size: 0.85rem; margin-bottom: 0.5rem; }
+  .about .photo img{ min-height: 200px; }
+  #gallery{ padding: 1.5rem 0.75rem; }
+  #gallery h3{ font-size: 1.4rem; }
+  #gallery p{ font-size: 0.85rem; margin-bottom: 1rem; }
+  .slide img{ height: 250px; }
+  .form, .info{ padding: 1rem; }
+  .form h3, .info h3{ font-size: 1.2rem; margin-bottom: 0.75rem; }
+  .input, textarea{ padding: 0.5rem 0.7rem; font-size: 0.9rem; }
+  textarea{ min-height: 100px; }
+  .info .line{ padding: 0.4rem 0; font-size: 0.85rem; }
+  .btn-social{ padding: 0.5rem 0.7rem; font-size: 0.8rem; }
+  footer .foot{ font-size: 0.8rem; }
+  .whatsapp{ width: 50px; height: 50px; font-size: 1.2rem; right: 1rem; bottom: 1rem; }
 }
 
 </style>
 
 <script>
-  // Asegúrate de tener cargado EmailJS y tu init ANTES de esto
-  document.getElementById('contact-form').addEventListener('submit', function(event) {
-    event.preventDefault();
+  // IMPORTANTE: init ANTES de enviar
+  emailjs.init({ publicKey: "wGo8YvMM5kiYxur2G" });
 
-    const submitButton = this.querySelector('button[type="submit"]');
-    const originalText = submitButton.textContent;
-    submitButton.textContent = 'Enviando...';
-    submitButton.disabled = true;
+  document.getElementById("contact-form").addEventListener("submit", function (e) {
+    e.preventDefault();
 
-    const formData = {
-      nombre: this.nombre.value,
-      telefono: this.telefono.value,
-      servicio: this.servicio.value,
-      fecha: this.fecha.value,
-      mensaje: this.mensaje.value,
-      to_email: 'lynlashes9@gmail.com'
-    };
-
-    console.log('Intentando enviar email con datos:', formData);
-
-    emailjs.send('service_zeikn5w', 'template_qsch31l', formData)
-      .then(function(response) {
-        console.log('Email enviado exitosamente:', response);
-        alert('Su solicitud ha sido enviada exitosamente y llegará al correo lynlashes9@gmail.com. Nos pondremos en contacto pronto.');
-        document.getElementById('contact-form').reset();
-        submitButton.textContent = originalText;
-        submitButton.disabled = false;
+    emailjs
+      .sendForm("service_zeikn5w", "template_qsch31l", this, { publicKey: "wGo8YvMM5kiYxur2G" })
+      .then(() => {
+        alert("Solicitud enviada correctamente.");
+        this.reset();
       })
-      .catch(function(error) {
-        console.error('Error al enviar email:', error);
-        alert('Error al enviar el mensaje. Inténtalo de nuevo.');
-        submitButton.textContent = originalText;
-        submitButton.disabled = false;
+      .catch((err) => {
+        console.error("EmailJS error:", err);
+        alert("No se pudo enviar. Abre F12 > Console y copia el error.");
       });
   });
 </script>
+
 
 
 </body>
